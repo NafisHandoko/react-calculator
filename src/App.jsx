@@ -3,41 +3,89 @@ import logo from './logo.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [buttons, setButtons] = useState([
+    {
+      id: 'clear',
+      text: 'clear'
+    },
+    {
+      id: 'seven',
+      text: '7'
+    },
+    {
+      id: 'eight',
+      text: '8',
+    },
+    {
+      id: 'nine',
+      text: '9'
+    },
+    {
+      id: 'add',
+      text: '+'
+    },
+    {
+      id: 'four',
+      text: '4'
+    },
+    {
+      id: 'five',
+      text: '5'
+    },
+    {
+      id: 'six',
+      text: '6'
+    },
+    {
+      id: 'subtract',
+      text: '-'
+    },
+    {
+      id: 'one',
+      text: '1'
+    },
+    {
+      id: 'two',
+      text: '2'
+    },
+    {
+      id: 'three',
+      text: '3'
+    },
+    {
+      id: 'multiply',
+      text: 'x'
+    },
+    {
+      id: 'decimal',
+      text: '.'
+    },
+    {
+      id: 'zero',
+      text: '0'
+    },
+    {
+      id: 'equals',
+      text: '='
+    },
+    {
+      id: 'divide',
+      text: '/'
+    }
+  ])
+
+  const [display, setDisplay] = useState('0')
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div className="container">
+      <div className="calculator">
+        <div id="display">{display}</div>
+        <div className="buttons">
+          {buttons.map((button) => (
+            <button id={button.id} className="button">{button.text}</button>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }
