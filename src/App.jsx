@@ -122,7 +122,33 @@ function App() {
     if(oprKey==='x'){
       oprKey = '*'
     }
-    setDisplay(display+oprKey)
+    // setDisplay(display+oprKey)
+    // setIncomma(false)
+    // if(display.charAt(display.length-1)=='-' || display.charAt(display.length-1)=='+' || display.charAt(display.length-1)=='*' || display.charAt(display.length-1)=='/'){
+    //   setDisplay(display.slice(0,-1)+oprKey)
+    // }else{
+    //   setDisplay(display+oprKey)
+    // }
+    // setIncomma(false)
+    let oprCount = 0
+    let revStr = display.split('').reverse()
+    for(let symbol of revStr){
+      if(symbol=='-' || symbol=='+' || symbol=='*' || symbol=='/'){
+        oprCount+=1
+      }else{
+        break
+      }
+    }
+    if(oprCount===0){
+      setDisplay(display+oprKey)
+    }else{
+      setDisplay(display.slice(0,-oprCount)+oprKey)
+    }
+    setIncomma(false)
+  }
+
+  const subtract = () => {
+    setDisplay(display+'-')
     setIncomma(false)
   }
 
@@ -167,7 +193,7 @@ function App() {
           <button id="four" className="button" onClick={addNumber}>4</button>
           <button id="five" className="button" onClick={addNumber}>5</button>
           <button id="six" className="button" onClick={addNumber}>6</button>
-          <button id="subtract" className="button" onClick={addOperator}>-</button>
+          <button id="subtract" className="button" onClick={subtract}>-</button>
 
           <button id="one" className="button" onClick={addNumber}>1</button>
           <button id="two" className="button" onClick={addNumber}>2</button>
