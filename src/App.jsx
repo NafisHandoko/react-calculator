@@ -137,10 +137,16 @@ function App() {
 
   const clearDisplay = () => {
     setDisplay('0')
+    setIncomma(false)
   }
 
   const calculate = () => {
     setDisplay(eval(display)+'')
+    if(display.includes('.',0)){
+      setIncomma(true)
+    }else{
+      setIncomma(false)
+    }
   }
 
   return (
