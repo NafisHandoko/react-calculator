@@ -3,108 +3,6 @@ import logo from './logo.svg'
 import './App.css'
 
 function App() {
-  // const [buttons, setButtons] = useState([
-  //   {
-  //     id: 'clear',
-  //     text: 'clear',
-  //     handler: clearDisplay
-  //   },
-  //   {
-  //     id: 'seven',
-  //     text: '7',
-  //     handler: addNumber
-  //   },
-  //   {
-  //     id: 'eight',
-  //     text: '8',
-  //     handler: addNumber
-  //   },
-  //   {
-  //     id: 'nine',
-  //     text: '9',
-  //     handler: addNumber
-  //   },
-  //   {
-  //     id: 'add',
-  //     text: '+',
-  //     handler: addOperator
-  //   },
-  //   {
-  //     id: 'four',
-  //     text: '4',
-  //     handler: addNumber
-  //   },
-  //   {
-  //     id: 'five',
-  //     text: '5',
-  //     handler: addNumber
-  //   },
-  //   {
-  //     id: 'six',
-  //     text: '6',
-  //     handler: addNumber
-  //   },
-  //   {
-  //     id: 'subtract',
-  //     text: '-',
-  //     handler: addOperator
-  //   },
-  //   {
-  //     id: 'one',
-  //     text: '1',
-  //     handler: addNumber
-  //   },
-  //   {
-  //     id: 'two',
-  //     text: '2',
-  //     handler: addNumber
-  //   },
-  //   {
-  //     id: 'three',
-  //     text: '3',
-  //     handler: addNumber
-  //   },
-  //   {
-  //     id: 'multiply',
-  //     text: 'x',
-  //     handler: addOperator
-  //   },
-  //   {
-  //     id: 'decimal',
-  //     text: '.',
-  //     handler: addDecimal
-  //   },
-  //   {
-  //     id: 'zero',
-  //     text: '0',
-  //     handler: addNumber
-  //   },
-  //   {
-  //     id: 'equals',
-  //     text: '=',
-  //     handler: calculate
-  //   },
-  //   {
-  //     id: 'divide',
-  //     text: '/',
-  //     handler: addOperator
-  //   }
-  // ])
-
-  // useEffect(() => {
-  //   const numberBtns = document.getElementsByClassName('number')
-  //   const operatorBtns = document.getElementsByClassName('operator')
-  //   const clearBtn = document.getElementById('clear')
-  //   const equalsBtn = document.getElementById('equals')
-  //   Array.from(numberBtns).forEach(function(btn) {
-  //     btn.addEventListener('click', addNumber);
-  //   });
-  //   Array.from(operatorBtns).forEach(function(btn) {
-  //     btn.addEventListener('click', addOperator);
-  //   });
-  //   clearBtn.addEventListener('click', clearDisplay)
-  //   equalsBtn.addEventListener('click', calculate)
-  // })
   const [display, setDisplay] = useState('0')
   const [incomma, setIncomma] = useState(false)
 
@@ -122,14 +20,6 @@ function App() {
     if(oprKey==='x'){
       oprKey = '*'
     }
-    // setDisplay(display+oprKey)
-    // setIncomma(false)
-    // if(display.charAt(display.length-1)=='-' || display.charAt(display.length-1)=='+' || display.charAt(display.length-1)=='*' || display.charAt(display.length-1)=='/'){
-    //   setDisplay(display.slice(0,-1)+oprKey)
-    // }else{
-    //   setDisplay(display+oprKey)
-    // }
-    // setIncomma(false)
     let oprCount = 0
     let revStr = display.split('').reverse()
     for(let symbol of revStr){
@@ -180,9 +70,6 @@ function App() {
       <div className="calculator">
         <div id="display">{display}</div>
         <div className="buttons">
-          {/* {buttons.map((button) => (
-            <button key={button.id} id={button.id} className="button" onClick={button.handler}>{button.text}</button>
-          ))} */}
           <button id="clear" className="button" onClick={clearDisplay}>clear</button>
 
           <button id="seven" className="button" onClick={addNumber}>7</button>
