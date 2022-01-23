@@ -32,17 +32,6 @@ p{
   font-size: 16px;
 }
 
-.repo{
-  padding-top: 10px;
-  text-decoration: none;
-  display: inline-block;
-  opacity: 0.5;
-}
-
-.repo:hover{
-  opacity: 1;
-}
-
 .calculator {
   backdrop-filter: blur(16px) saturate(181%);
   -webkit-backdrop-filter: blur(16px) saturate(181%);
@@ -64,7 +53,7 @@ p{
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
-    "clear clear clear clear"
+    "clear clear repo repo"
     ". . . ."
     ". . . ."
     ". . . ."
@@ -77,6 +66,17 @@ p{
   background-color: rgba(255, 255, 255, 0.125);
 }
 
+.repo{
+  padding-top: 10px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: repo;
+  border: 1px solid transparent;
+  padding: 0;
+}
+
 .button{
   color: white;
   padding: 25px;
@@ -85,12 +85,12 @@ p{
   border: 1px solid transparent;
 }
 
-.button:hover{
+.button:hover, .repo:hover{
   border: 1px solid white;
   border-radius: 12px;
 }
 
-.button:active{
+.button:active, .repo:active{
   background-color: rgba(255, 255, 255, 0.125);
 }
 

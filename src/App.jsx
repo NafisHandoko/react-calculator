@@ -70,13 +70,13 @@ function App() {
       <div className="desc">
         <h1>React Calculator</h1>
         <p>Copyright 2022 by Nafis Handoko</p>
-        <a href="https://github.com/NafisHandoko/react-calculator" className="repo" target="_blank" rel="noopener noreferrer"><i className="bi bi-github"></i></a>
       </div>
       <div className="calculator">
         <div id="display">{display}</div>
         <div className="buttons">
           <button id="clear" className="button" onClick={clearDisplay}>clear</button>
-
+          <a href="https://github.com/NafisHandoko/react-calculator" className="repo" target="_blank" rel="noopener noreferrer"><i className="bi bi-github"></i></a>
+          
           <button id="seven" className="button" onClick={addNumber}>7</button>
           <button id="eight" className="button" onClick={addNumber}>8</button>
           <button id="nine" className="button" onClick={addNumber}>9</button>
