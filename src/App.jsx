@@ -67,6 +67,11 @@ function App() {
 
   return (
     <div className="container">
+      <div className="desc">
+        <h1>React Calculator</h1>
+        <p>Copyright 2022 by Nafis Handoko</p>
+        <a href="https://github.com/NafisHandoko/react-calculator" className="repo" target="_blank" rel="noopener noreferrer"><i className="bi bi-github"></i></a>
+      </div>
       <div className="calculator">
         <div id="display">{display}</div>
         <div className="buttons">
